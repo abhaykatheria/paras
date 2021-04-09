@@ -109,10 +109,10 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/contact">
+        <Route exact path = "/contact" component={ContactUsPage}>
           <ContactUsPage />
         </Route>
-        <Route path="/products">
+        <Route exact path = "/products" component={Products}>
          <Products/>
         </Route>
         <Route path="/">
