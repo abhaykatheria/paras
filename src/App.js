@@ -102,24 +102,20 @@ import Products from "pages/BlogIndex.js";
 // import PrivacyPolicyPage from "pages/PrivacyPolicy.js";
 
 import Home from 'demos/SaaSProductLandingPage'
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
-
+import { HashRouter, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
+  const browserHistory = createBrowserHistory();
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path = "/contact" component={ContactUsPage}>
-          <ContactUsPage />
-        </Route>
-        <Route exact path = "/products" component={Products}>
-         <Products/>
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <HashRouter history = {browserHistory}>
+    <Switch>
+      <Route exact path = "/contact" component={ContactUsPage}/>
+      <Route exact path = "/products" component={Products}/>
+      <Route exact path="/" component={Home}/>
+    </Switch>
+</HashRouter>
   );
 }
 
