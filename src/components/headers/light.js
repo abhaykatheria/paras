@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-
+import { Link } from "react-router-dom";
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
 import logo from "../../images/logo.png";
@@ -74,8 +74,8 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
    */
   const defaultLinks = [
     <NavLinks key={1}>
-      <NavLink href="/products">Products</NavLink>
-      <NavLink href="/contact">Contact Us</NavLink>
+      <Link to="/products"><NavLink >Products</NavLink></Link>
+      <Link to="/contact"><NavLink >Contact Us</NavLink></Link>
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink>
@@ -87,10 +87,10 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   const collapseBreakpointCss = collapseBreakPointCssMap[collapseBreakpointClass];
 
   const defaultLogoLink = (
-    <LogoLink href="/">
+    <Link to="/"><LogoLink>
       <img src={logo} alt="logo" />
       Jai Durge Engineering Company
-    </LogoLink>
+    </LogoLink></Link>
   );
 
   logoLink = logoLink || defaultLogoLink;
